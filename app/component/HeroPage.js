@@ -11,11 +11,11 @@ const HeroPage = () => {
   }
 
   return (
-    <main className="w-full max-w-7xl mx-auto md:h-150 flex items-center pb-0">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+    <main className="w-full max-w-7xl mx-auto md:h-160 flex items-center mt-32 md:mt-8 lg:mt-24 mb-18 md:mb-0 pb-0">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
         {/* Left Side - Text Content */}
         <motion.div
-          className="text-center lg:text-left space-y-6"
+          className="text-center lg:text-left space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6"
           initial="hidden"
           animate="visible"
           variants={{
@@ -55,11 +55,11 @@ const HeroPage = () => {
               hidden: { opacity: 0, y: 30 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
             }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight"
+            className="text-[26px] sm:text-[30px] md:text-[36px] lg:text-[40px] xl:text-[48px] 2xl:text-[61px] font-bold text-gray-900 dark:text-white leading-tight"
           >
             Hi, I&apos;m <span className="text-gradient">Nayeem</span>
             <br />
-            <span className="text-3xl md:text-4xl lg:text-5xl">Front-End Developer</span>
+            <span className="text-[20px] sm:text-[24px] md:text-[32px] lg:text-[36px] xl:text-[40px] 2xl:text-[48px]">Front-End Developer</span>
           </motion.h1>
 
           {/* Description */}
@@ -68,7 +68,7 @@ const HeroPage = () => {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
             }}
-            className="text-lg text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0"
+            className="text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0"
           >
             Fresh graduate passionate about creating beautiful web experiences. Skilled in React, Node.js, and modern web technologies.
           </motion.p>
@@ -79,11 +79,11 @@ const HeroPage = () => {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
             }}
-            className="flex flex-wrap gap-4 justify-center lg:justify-start pt-4"
+            className="flex flex-wrap gap-4 justify-center lg:justify-start pt-0 lg:pt-4"
           >
             <motion.button
               onClick={() => scrollToSection('contact')}
-              className="bg-secondary text-primary font-semibold px-8 py-3 rounded-full shadow-lg"
+              className="bg-secondary text-primary text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] font-semibold px-5 py-2 md:px-8 md:py-3 rounded-full shadow-lg"
               whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(174, 255, 114, 0.3)' }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
@@ -92,7 +92,7 @@ const HeroPage = () => {
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('projects')}
-              className="bg-transparent text-secondary font-semibold px-8 py-3 rounded-full shadow-lg border-2 border-secondary"
+              className="bg-transparent text-secondary text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] font-semibold px-5 py-2 md:px-8 md:py-3 rounded-full shadow-lg border-2 border-secondary"
               whileHover={{
                 scale: 1.05,
                 backgroundColor: 'rgba(174, 255, 114, 0.1)',
@@ -127,7 +127,7 @@ const HeroPage = () => {
           />
           <div className="relative">
             <motion.div
-              className="w-80 h-80 rounded-full shadow-2xl border-8 border-white dark:border-gray-800 overflow-hidden"
+              className="w-50 h-50 sm:w-60 sm:h-60 md:w-70 md:h-70 lg:w-80 lg:h-80 rounded-full shadow-2xl border-8 border-white dark:border-gray-800 overflow-hidden"
               initial={{ scale: 0, rotate: -180, y: 0 }}
               animate={{
                 scale: 1,
@@ -167,18 +167,18 @@ const HeroPage = () => {
                 transition: { duration: 0.3 },
               }}
             >
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2 md:gap-3">
                 <motion.div
-                  className="w-12 h-12 bg-linear-to-br from-secondary to-accent rounded-full flex items-center justify-center"
+                  className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-linear-to-br from-secondary to-accent rounded-full flex items-center justify-center"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                 >
-                  <span className="text-2xl">🚀</span>
+                  <span className="text-14 sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[24px]">🚀</span>
                 </motion.div>
                 <div>
-                  <p className="text-xs text-gray-500 dark:text-gray-400">Status</p>
+                  <p className="text-[9px] sm:text-[11px] md:text-[12px] text-gray-500 dark:text-gray-400">Status</p>
                   <motion.p
-                    className="text-sm font-bold text-gray-900 dark:text-white"
+                    className="text-[10px] sm:text-[12px] md:text-[14px] font-bold text-gray-900 dark:text-white"
                     animate={{ opacity: [1, 0.7, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                   >
