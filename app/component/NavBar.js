@@ -1,13 +1,15 @@
 "use client";
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { MdMenu, MdClose } from 'react-icons/md'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaCode } from "react-icons/fa";
 
 function NavBar() {
-  const [activeSection, setActiveSection] = useState('home')
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [activeSection, setActiveSection] = useState("home");
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
+  const lastScrollY = useRef(0);
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id)
@@ -19,191 +21,175 @@ function NavBar() {
   }
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = ['home', 'about', 'skills', 'projects', 'contact']
-      const scrollPosition = window.scrollY + 200
-
-      for (const section of sections) {
-        const element = document.getElementById(section)
-        if (element) {
-          const { offsetTop, offsetHeight } = element
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section)
-            break
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
           }
-        }
-      }
-    }
+        });
+      },
+      { threshold: 0.6 }
+    );
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    ["home", "about", "skills", "projects", "contact"].forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Scroll direction hide/show navbar
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScrollY.current && currentScroll > 100) {
+        setShowNavbar(false);
+      } else {
+        setShowNavbar(true);
+      }
+
+      lastScrollY.current = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="bg-white/10 w-full px-4 py-6 sticky max-w-7xl mx-auto top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
-      <nav className="flex justify-between items-center">
-        <div className="flex items-center gap-2 cursor-pointer">
-          <FaCode className="text-secondary text-xl" />
-          <span className="text-xl font-bold text-white tracking-wide">
-            Nayeem<span className="text-secondary">.dev</span>
-          </span>
-        </div>
-        <div className="hidden lg:flex items-center space-x-6 text-gray-600 dark:text-gray-300">
-          <button
-            onClick={() => scrollToSection('home')}
-            className={`font-medium px-4 py-2 rounded-full transition-all ${activeSection === 'home'
-              ? 'bg-secondary text-primary'
-              : 'hover:text-gray-900 dark:hover:text-white'
-              }`}
-          >
-            Home
-          </button>
-          <button
-            onClick={() => scrollToSection('about')}
-            className={`font-medium px-4 py-2 rounded-full transition-all ${activeSection === 'about'
-              ? 'bg-secondary text-primary'
-              : 'hover:text-gray-900 dark:hover:text-white'
-              }`}
-          >
-            About
-          </button>
-          <button
-            onClick={() => scrollToSection('skills')}
-            className={`font-medium px-4 py-2 rounded-full transition-all ${activeSection === 'skills'
-              ? 'bg-secondary text-primary'
-              : 'hover:text-gray-900 dark:hover:text-white'
-              }`}
-          >
-            Skills
-          </button>
-          <button
-            onClick={() => scrollToSection('projects')}
-            className={`font-medium px-4 py-2 rounded-full transition-all ${activeSection === 'projects'
-              ? 'bg-secondary text-primary'
-              : 'hover:text-gray-900 dark:hover:text-white'
-              }`}
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToSection('contact')}
-            className={`font-medium px-4 py-2 rounded-full transition-all ${activeSection === 'contact'
-              ? 'bg-secondary text-primary'
-              : 'hover:text-gray-900 dark:hover:text-white'
-              }`}
-          >
-            Contact
-          </button>
-        </div>
-        <div className="flex items-center space-x-4">
-          <a className="hidden lg:block bg-secondary text-primary font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-all" href="https://drive.google.com/file/d/14caD1rlRM_QEF0NfG7xy_kat3-C9Eczm/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-            Download CV
-          </a>
-          <button
-            className="lg:hidden block p-2 z-50"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? (
-              <MdClose className="text-3xl text-gray-900 dark:text-white" />
-            ) : (
-              <MdMenu className="text-3xl text-gray-900 dark:text-white" />
-            )}
-          </button>
-        </div>
-      </nav>
+    <AnimatePresence>
+      {showNavbar && (
+        <motion.header
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: -100, opacity: 0 }}
+          transition={{ type: "spring", stiffness: 120, damping: 20 }}
+          className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-sm"
+        >
 
-      {/* Mobile Menu - Compact Version */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed top-20 left-4 right-4 bg-primary/95 backdrop-blur-lg rounded-2xl shadow-2xl z-40 lg:hidden p-4"
-          >
-            <div className="flex flex-col space-y-2">
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.05 }}
-                onClick={() => scrollToSection('home')}
-                className={`text-base font-medium px-4 py-2 rounded-lg transition-all text-left ${activeSection === 'home'
-                  ? 'bg-secondary text-primary'
-                  : 'text-white hover:bg-secondary/20'
-                  }`}
-              >
-                Home
-              </motion.button>
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.1 }}
-                onClick={() => scrollToSection('about')}
-                className={`text-base font-medium px-4 py-2 rounded-lg transition-all text-left ${activeSection === 'about'
-                  ? 'bg-secondary text-primary'
-                  : 'text-white hover:bg-secondary/20'
-                  }`}
-              >
-                About
-              </motion.button>
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.15 }}
-                onClick={() => scrollToSection('skills')}
-                className={`text-base font-medium px-4 py-2 rounded-lg transition-all text-left ${activeSection === 'skills'
-                  ? 'bg-secondary text-primary'
-                  : 'text-white hover:bg-secondary/20'
-                  }`}
-              >
-                Skills
-              </motion.button>
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.2 }}
-                onClick={() => scrollToSection('projects')}
-                className={`text-base font-medium px-4 py-2 rounded-lg transition-all text-left ${activeSection === 'projects'
-                  ? 'bg-secondary text-primary'
-                  : 'text-white hover:bg-secondary/20'
-                  }`}
-              >
-                Projects
-              </motion.button>
-              <motion.button
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.25 }}
-                onClick={() => scrollToSection('contact')}
-                className={`text-base font-medium px-4 py-2 rounded-lg transition-all text-left ${activeSection === 'contact'
-                  ? 'bg-secondary text-primary'
-                  : 'text-white hover:bg-secondary/20'
-                  }`}
-              >
-                Contact
-              </motion.button>
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.3 }}
-                className="pt-2 border-t border-white/20"
-              >
-                <a
-                  className="block text-center bg-secondary text-primary font-semibold px-4 py-2 rounded-lg"
-                  href="https://drive.google.com/file/d/14caD1rlRM_QEF0NfG7xy_kat3-C9Eczm/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Download CV
-                </a>
-              </motion.div>
+          <nav className="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+            {/* Logo */}
+            <div className="flex items-center gap-2 cursor-pointer">
+              <FaCode className="text-secondary text-xl" />
+              <span className="text-xl font-bold text-white tracking-wide">
+                Nayeem<span className="text-secondary">.dev</span>
+              </span>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </header>
+
+            {/* Desktop Menu */}
+            <div className="hidden lg:flex items-center space-x-6 text-gray-600 dark:text-gray-300">
+              {["home", "about", "skills", "projects", "contact"].map((section) => (
+                <button
+                  key={section}
+                  onClick={() => scrollToSection(section)}
+                  className={`font-medium px-4 py-2 rounded-full transition-all cursor-pointer 
+                    ${activeSection === section
+                      ? "bg-secondary text-primary"
+                      : "text-white opacity-60"}
+                       hover:bg-secondary dark:hover:text-primary hover:opacity-100
+                    `}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              ))}
+            </div>
+
+            {/* Right Section: CV + Mobile Hamburger */}
+            <div className="flex items-center space-x-4">
+              <a
+                className="hidden lg:block bg-secondary text-primary font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-all"
+                href="https://drive.google.com/file/d/14caD1rlRM_QEF0NfG7xy_kat3-C9Eczm/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download CV
+              </a>
+
+              {/* Hamburger Button */}
+              <button
+                className="lg:hidden flex items-center justify-center p-2 mr-1 cursor-pointer"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? (
+                  <MdClose className="text-3xl text-gray-900 dark:text-white" />
+                ) : (
+                  <MdMenu className="text-3xl text-gray-900 dark:text-white" />
+                )}
+              </button>
+
+            </div>
+          </nav>
+
+          {/* Mobile Menu - Compact Version */}
+          <div className="fixed top-20 right-4 z-50 lg:hidden">
+            <AnimatePresence>
+              {isMobileMenuOpen && (
+                <motion.div
+                  initial={{ x: 200, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: 200, opacity: 0 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  className="bg-primary/95 backdrop-blur-lg rounded-2xl shadow-2xl p-6 w-64"
+                >
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    exit="hidden"
+                    variants={{
+                      hidden: {},
+                      visible: {
+                        transition: {
+                          staggerChildren: 0.05
+                        }
+                      }
+                    }}
+                    className="flex flex-col space-y-3"
+                  >
+                    {["home", "about", "skills", "projects", "contact"].map((section, index) => (
+                      <motion.button
+                        key={section}
+                        onClick={() => scrollToSection(section)}
+                        initial={{ x: 50, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        exit={{ x: 50, opacity: 0 }}
+                        transition={{ delay: index * 0.05 }}
+                        className={`text-base font-medium px-4 py-2 rounded-lg text-left cursor-pointer transition-all ${activeSection === section
+                          ? "bg-secondary text-primary"
+                          : "text-white hover:bg-secondary/20"
+                          }`}
+                      >
+                        {section.charAt(0).toUpperCase() + section.slice(1)}
+                      </motion.button>
+                    ))}
+
+                    <motion.div
+                      initial={{ x: 50, opacity: 0 }}
+                      animate={{ x: 0, opacity: 1 }}
+                      exit={{ x: 50, opacity: 0 }}
+                      transition={{ delay: 0.3 }}
+                      className="pt-2 border-t border-white/20"
+                    >
+                      <a
+                        className="block text-center bg-secondary text-primary font-semibold px-4 py-2 rounded-lg cursor-pointer"
+                        href="https://drive.google.com/file/d/14caD1rlRM_QEF0NfG7xy_kat3-C9Eczm/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        Download CV
+                      </a>
+                    </motion.div>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
+        </motion.header>
+      )}
+    </AnimatePresence>
   )
 }
 
