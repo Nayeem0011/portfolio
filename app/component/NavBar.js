@@ -66,7 +66,7 @@ function NavBar() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -100, opacity: 0 }}
           transition={{ type: "spring", stiffness: 120, damping: 20 }}
-          className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-sm"
+          className="fixed top-0 left-0 w-full z-50 bg-black/20 backdrop-blur-sm"
         >
 
           <nav className="max-w-7xl mx-auto px-3 py-3 md:px-4 md:py-6 flex justify-between items-center">

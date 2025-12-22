@@ -10,7 +10,7 @@ const Pagetwo = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section ref={ref} className="w-full max-w-7xl mx-auto py-20 sm:pb-0">
+    <section ref={ref} className="w-full max-w-7xl mx-auto py-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Left Side - Image */}
         <motion.div
