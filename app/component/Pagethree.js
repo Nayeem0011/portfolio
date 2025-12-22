@@ -11,7 +11,7 @@ const Pagethree = () => {
 
   const skills = [
     { name: "HTML", icon: <FaHtml5 className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-orange-500" />, level: 95, color: "from-orange-500 to-red-500" },
-    { name: "CSS", icon: <FaCss3 className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-orange-500" />, level: 95, color: "from-orange-500 to-red-500" },
+    { name: "CSS3", icon: <FaCss3 className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-orange-500" />, level: 95, color: "from-orange-500 to-red-500" },
     { name: "JavaScript", icon: <SiJavascript className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-yellow-500" />, level: 90, color: "from-yellow-400 to-yellow-600" },
     { name: "React.js", icon: <FaReact className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-blue-500" />, level: 90, color: "from-blue-500 to-cyan-500" },
     { name: "Next.js", icon: <SiNextdotjs className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-white" />, level: 85, color: "from-gray-700 to-gray-900" },
@@ -22,7 +22,7 @@ const Pagethree = () => {
   ]
 
   return (
-    <section ref={ref} className="w-full max-w-7xl mx-auto py-12 md:py-20">
+    <section ref={ref} className="w-full max-w-7xl mx-auto py-20 pb-12 sm:pb-0">
       <motion.div
         className="text-left mb-8 sm:mb-10 md:mb-16"
         initial={{ opacity: 0, y: 50 }}
@@ -60,7 +60,7 @@ const Pagethree = () => {
         </motion.h2>
       </motion.div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
         {skills.map((skill, index) => (
           <motion.div
             key={index}

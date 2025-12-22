@@ -1,21 +1,20 @@
 'use client';
 
 import Marquee from "react-fast-marquee"
-import { FaReact, FaNodeJs, FaHtml5, FaGitAlt, FaWordpress } from "react-icons/fa"
-import { SiTailwindcss, SiMongodb, SiJavascript, SiNextdotjs, SiDaisyui, SiExpress } from "react-icons/si"
+import { FaReact, FaHtml5, FaGitAlt, FaCss3, FaSass } from "react-icons/fa"
+import { SiTailwindcss, SiJavascript, SiNextdotjs, SiDaisyui, SiTypescript } from "react-icons/si"
 
 const Pageone = () => {
   const skills = [
+    { name: "HTML", icon: <FaHtml5 className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
+    { name: "CSS3", icon: <FaCss3 className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
+    { name: "JAVASCRIPT", icon: <SiJavascript className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
     { name: "REACT.JS", icon: <FaReact className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
     { name: "NEXT.JS", icon: <SiNextdotjs className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
-    { name: "NODE.JS", icon: <FaNodeJs className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
-    { name: "MONGODB", icon: <SiMongodb className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
+    { name: "TYPESCRIPT", icon: <SiTypescript className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
     { name: "TAILWIND CSS", icon: <SiTailwindcss className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
     { name: "DAISY UI", icon: <SiDaisyui className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
-    { name: "JAVASCRIPT", icon: <SiJavascript className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
-    { name: "HTML & CSS", icon: <FaHtml5 className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
-    { name: "EXPRESS.JS", icon: <SiExpress className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
-    { name: "WORDPRESS", icon: <FaWordpress className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
+    { name: "SASS & PUG", icon: <FaSass className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
     { name: "GIT & GITHUB", icon: <FaGitAlt className="text-[20px] sm:text-[22px] md:text-[24px] lg:text-[26px] xl:text-[28px] 2xl:text-[30px]" /> },
   ]
 
