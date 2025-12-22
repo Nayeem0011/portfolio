@@ -69,7 +69,7 @@ function NavBar() {
           className="fixed top-0 left-0 w-full z-50 bg-white/10 backdrop-blur-sm"
         >
 
-          <nav className="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+          <nav className="max-w-7xl mx-auto px-3 py-3 md:px-4 md:py-6 flex justify-between items-center">
             {/* Logo */}
             <div className="flex items-center gap-2 cursor-pointer">
               <FaCode className="text-secondary text-xl" />
@@ -118,12 +118,11 @@ function NavBar() {
                   <MdMenu className="text-3xl text-gray-900 dark:text-white" />
                 )}
               </button>
-
             </div>
           </nav>
 
           {/* Mobile Menu - Compact Version */}
-          <div className="fixed top-20 right-4 z-50 lg:hidden">
+          <div className="fixed top-16 right-4 z-50 lg:hidden">
             <AnimatePresence>
               {isMobileMenuOpen && (
                 <motion.div
