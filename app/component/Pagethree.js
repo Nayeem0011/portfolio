@@ -60,11 +60,11 @@ const Pagethree = () => {
         </motion.h2>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 lg:gap-6">
         {skills.map((skill, index) => (
           <motion.div
             key={index}
-            className="group relative bg-white dark:bg-gray-800 p-3 sm:p-4 md:p-5 lg:p-6 rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-secondary overflow-hidden"
+            className="group relative bg-white dark:bg-gray-800 p-2 sm:p-4 md:p-5 lg:p-6 rounded-xl md:rounded-2xl lg:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-transparent hover:border-secondary overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -75,20 +75,20 @@ const Pagethree = () => {
             />
 
             <div className="relative z-10">
-              <div className="flex items-center justify-between mb-3 sm:mb-4 md:mb-5 lg:mb-6">
-                <div className="flex items-center gap-2 md:gap-3 lg:gap-4">
+              <div className="flex items-center justify-between mb-2 sm:mb-4 md:mb-5 lg:mb-6">
+                <div className="flex items-center gap-1.5 md:gap-3 lg:gap-4">
                   <motion.div
-                    className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-15 xl:h-15 2xl:w-16 2xl:h-16 bg-linear-to-br from-secondary/20 to-primary/20 rounded-md sm:rounded-lg md:rounded-1xl lg:rounded-2xl flex items-center justify-center"
+                    className="w-7 h-7 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-15 xl:h-15 2xl:w-16 2xl:h-16 bg-linear-to-br from-secondary/20 to-primary/20 rounded-md sm:rounded-lg md:rounded-1xl lg:rounded-2xl flex items-center justify-center"
                     whileHover={{ scale: 1.2, rotate: 10 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     {skill.icon}
                   </motion.div>
                   <div>
-                    <h3 className="text-[14px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px] font-bold text-gray-900 dark:text-white group-hover:text-secondary transition-colors">
+                    <h3 className="text-[12px] sm:text-[15px] md:text-[16px] lg:text-[17px] xl:text-[18px] 2xl:text-[20px] font-bold text-gray-900 dark:text-white group-hover:text-secondary transition-colors">
                       {skill.name}
                     </h3>
-                    <p className="text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-500 dark:text-gray-400">Proficiency</p>
+                    <p className="text-[10px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-500 dark:text-gray-400">Proficiency</p>
                   </div>
                 </div>
                 <motion.div
@@ -97,7 +97,7 @@ const Pagethree = () => {
                   animate={isInView ? { scale: 1 } : { scale: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 + 0.3, type: "spring" }}
                 >
-                  <span className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] font-bold text-secondary">{skill.level}%</span>
+                  <span className="text-[14px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] font-bold text-secondary">{skill.level}%</span>
                 </motion.div>
               </div>
 
