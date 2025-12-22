@@ -1,7 +1,7 @@
 'use client';
 
-import { FaReact, FaNodeJs, FaHtml5, FaGitAlt } from "react-icons/fa"
-import { SiTailwindcss, SiMongodb, SiJavascript, SiNextdotjs, SiExpress } from "react-icons/si"
+import { FaReact, FaHtml5, FaGitAlt, FaCss3 } from "react-icons/fa"
+import { SiTailwindcss, SiJavascript, SiNextdotjs, SiTypescript, SiSass } from "react-icons/si"
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 
@@ -10,14 +10,14 @@ const Pagethree = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const skills = [
-    { name: "React.js", icon: <FaReact className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-blue-500" />, level: 85, color: "from-blue-500 to-cyan-500" },
-    { name: "Next.js", icon: <SiNextdotjs className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-white" />, level: 75, color: "from-gray-700 to-gray-900" },
+    { name: "HTML", icon: <FaHtml5 className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-orange-500" />, level: 95, color: "from-orange-500 to-red-500" },
+    { name: "CSS", icon: <FaCss3 className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-orange-500" />, level: 95, color: "from-orange-500 to-red-500" },
     { name: "JavaScript", icon: <SiJavascript className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-yellow-500" />, level: 90, color: "from-yellow-400 to-yellow-600" },
-    { name: "Node.js", icon: <FaNodeJs className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-green-600" />, level: 80, color: "from-green-500 to-green-700" },
-    { name: "MongoDB", icon: <SiMongodb className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-green-500" />, level: 75, color: "from-green-400 to-green-600" },
+    { name: "React.js", icon: <FaReact className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-blue-500" />, level: 90, color: "from-blue-500 to-cyan-500" },
+    { name: "Next.js", icon: <SiNextdotjs className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-white" />, level: 85, color: "from-gray-700 to-gray-900" },
+    { name: "Typescript", icon: <SiTypescript className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-green-600" />, level: 80, color: "from-green-500 to-green-700" },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-cyan-500" />, level: 95, color: "from-cyan-400 to-blue-500" },
-    { name: "HTML & CSS", icon: <FaHtml5 className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-orange-500" />, level: 95, color: "from-orange-500 to-red-500" },
-    { name: "Express.js", icon: <SiExpress className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-gray-400" />, level: 70, color: "from-gray-400 to-gray-600" },
+    { name: "Sass & Pug", icon: <SiSass className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-green-500" />, level: 70, color: "from-green-400 to-green-600" },
     { name: "Git & GitHub", icon: <FaGitAlt className="text-[18px] sm:text-[20px] md:text-[24px] lg:text-[28px] xl:text-[32px] 2xl:text-[36px] text-orange-600" />, level: 85, color: "from-orange-500 to-red-600" },
   ]
 
