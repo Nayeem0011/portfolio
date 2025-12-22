@@ -11,11 +11,11 @@ const HeroPage = () => {
   }
 
   return (
-    <main className="w-full max-w-7xl mx-auto md:h-160 flex items-center mt-32 md:mt-8 lg:mt-24 mb-18 md:mb-0 pb-0">
+    <main className="w-full max-w-7xl mx-auto md:h-140 lg:h-170 flex items-center mt-22 md:mt-8 lg:mt-24 mb-10 md:mb-0 pb-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
         {/* Left Side - Text Content */}
         <motion.div
-          className="text-center lg:text-left space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6"
+          className="text-center lg:text-left space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-6"
           initial="hidden"
           animate="visible"
           variants={{
@@ -32,10 +32,10 @@ const HeroPage = () => {
               hidden: { opacity: 0, x: -50 },
               visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
             }}
-            className="inline-flex items-center space-x-2 text-sm font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-secondary/20 px-4 py-2 rounded-full"
+            className="inline-flex items-center space-x-2 text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-secondary/20 py-1.5 px-3 md:py-2 md:px-4 rounded-full"
           >
             <motion.span
-              className="w-2 h-2 bg-secondary rounded-full"
+              className="w-1 h-1 md:w-2 md:h-2 bg-secondary rounded-full"
               animate={{
                 scale: [1, 1.5, 1],
                 opacity: [1, 0.5, 1],
