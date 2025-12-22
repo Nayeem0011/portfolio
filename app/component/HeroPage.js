@@ -11,7 +11,7 @@ const HeroPage = () => {
   }
 
   return (
-    <main className="w-full max-w-7xl mx-auto md:h-140 lg:h-170 flex items-center mt-22 md:mt-8 lg:mt-24 mb-10 md:mb-0 pb-0">
+    <main className="w-full max-w-7xl mx-auto md:h-140 lg:h-170 flex items-center mt-32 md:mt-8 lg:mt-24 mb-20 md:mb-0 pb-0">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full">
         {/* Left Side - Text Content */}
         <motion.div
@@ -83,7 +83,7 @@ const HeroPage = () => {
           >
             <motion.button
               onClick={() => scrollToSection('contact')}
-              className="bg-secondary text-primary text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] font-semibold px-5 py-2 md:px-8 md:py-3 rounded-full shadow-lg"
+              className="bg-secondary text-primary text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] font-semibold px-5 py-2 md:px-8 md:py-3 rounded-full shadow-lg cursor-pointer"
               whileHover={{ scale: 1.05, boxShadow: '0 10px 30px rgba(174, 255, 114, 0.3)' }}
               whileTap={{ scale: 0.95 }}
               transition={{ type: 'spring', stiffness: 400, damping: 17 }}
@@ -92,7 +92,7 @@ const HeroPage = () => {
             </motion.button>
             <motion.button
               onClick={() => scrollToSection('projects')}
-              className="bg-transparent text-secondary text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] font-semibold px-5 py-2 md:px-8 md:py-3 rounded-full shadow-lg border-2 border-secondary"
+              className="bg-transparent text-secondary text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] font-semibold px-5 py-2 md:px-8 md:py-3 rounded-full shadow-lg border-2 border-secondary cursor-pointer"
               whileHover={{
                 scale: 1.05,
                 backgroundColor: 'rgba(174, 255, 114, 0.1)',
