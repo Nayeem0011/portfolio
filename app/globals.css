@@ -27,7 +27,7 @@ body {
   text-emphasis-color: transparent;
 }
 
-/* Swiper Custom Styles */
+/* Swiper Custom Styles
 .projects-swiper {
   padding: 20px 0 60px 0;
 }
@@ -58,7 +58,7 @@ body {
 .projects-swiper .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background: #0D2426;
+  background: #c6faff;
   opacity: 0.3;
   transition: all 0.3s ease;
 }
@@ -68,4 +68,123 @@ body {
   opacity: 1;
   width: 30px;
   border-radius: 6px;
+} */
+/* Swiper Base */
+
+
+
+
+
+.projects-swiper {
+  padding: 20px 0 60px 0;
+}
+
+/* =========================
+   Navigation Buttons (Default – Desktop)
+========================= */
+.projects-swiper .swiper-button-next,
+.projects-swiper .swiper-button-prev {
+  background: #AEFF72;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #0D2426;
+  transition: all 0.3s ease;
+}
+
+.projects-swiper .swiper-button-next::after,
+.projects-swiper .swiper-button-prev::after {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Hover */
+.projects-swiper .swiper-button-next:hover,
+.projects-swiper .swiper-button-prev:hover {
+  background: #0D2426;
+  color: #AEFF72;
+  transform: scale(1.1);
+}
+
+/* =========================
+   Pagination
+========================= */
+.projects-swiper .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background: #c6faff;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.projects-swiper .swiper-pagination-bullet-active {
+  background: #AEFF72;
+  opacity: 1;
+  width: 30px;
+  border-radius: 6px;
+}
+
+/* =========================
+   Tablet (≤1024px)
+========================= */
+@media (max-width: 1024px) {
+  .projects-swiper {
+    padding: 16px 0 50px 0;
+  }
+
+  .projects-swiper .swiper-button-next,
+  .projects-swiper .swiper-button-prev {
+    width: 44px;
+    height: 44px;
+  }
+
+  .projects-swiper .swiper-button-next::after,
+  .projects-swiper .swiper-button-prev::after {
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   Mobile (≤768px)
+========================= */
+@media (max-width: 768px) {
+  .projects-swiper {
+    padding: 12px 0 40px 0;
+  }
+
+  .projects-swiper .swiper-button-next,
+  .projects-swiper .swiper-button-prev {
+    width: 36px;
+    height: 36px;
+  }
+
+  .projects-swiper .swiper-button-next::after,
+  .projects-swiper .swiper-button-prev::after {
+    font-size: 14px;
+  }
+
+  .projects-swiper .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+  }
+
+  .projects-swiper .swiper-pagination-bullet-active {
+    width: 20px;
+  }
+}
+
+/* =========================
+   Small Mobile (≤480px)
+========================= */
+@media (max-width: 480px) {
+  .projects-swiper .swiper-button-next,
+  .projects-swiper .swiper-button-prev {
+    width: 32px;
+    height: 32px;
+  }
+
+  .projects-swiper .swiper-button-next::after,
+  .projects-swiper .swiper-button-prev::after {
+    font-size: 12px;
+  }
 }

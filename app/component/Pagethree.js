@@ -22,7 +22,7 @@ const Pagethree = () => {
   ]
 
   return (
-    <section ref={ref} className="w-full max-w-7xl mx-auto py-20 pb-12 sm:pb-0">
+    <section ref={ref} className="w-full max-w-7xl mx-auto py-20 pb-12 sm:pb-20">
       <motion.div
         className="text-left mb-8 sm:mb-10 md:mb-16"
         initial={{ opacity: 0, y: 50 }}
