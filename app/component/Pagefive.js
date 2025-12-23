@@ -1,6 +1,6 @@
 'use client';
 
-import { FaMapMarkerAlt, FaPhone, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa"
+import { FaMapMarkerAlt, FaPhone, FaGithub, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa"
 import { useState, useRef } from "react"
 import { motion, useInView } from "framer-motion"
 
@@ -186,22 +186,22 @@ const Pagefive = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               <div>
-                <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-2">First Name</label>
+                <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-1 md:mb-2">First Name</label>
                 <input
                   type="text"
                   name="First Name"
                   required
-                  className="w-full py-1.5 px-3 lg:py-3 lg:px-4 bg-[#0f2828] border border-gray-700 rounded-lg text-white outline-none focus:border-primary transition-all text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
+                  className="w-full py-2 px-3 lg:py-3 lg:px-4 bg-[#0f2828] border border-gray-700 rounded-lg text-white outline-none focus:border-primary transition-all text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
                   placeholder="John"
                 />
               </div>
               <div>
-                <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-2">Last Name</label>
+                <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-1 md:mb-2">Last Name</label>
                 <input
                   type="text"
                   name="Last Name"
                   required
-                  className="w-full py-1.5 px-3 lg:py-3 lg:px-4 bg-[#0f2828] border border-gray-700 rounded-lg text-white outline-none focus:border-primary transition-all text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
+                  className="w-full py-2 px-3 lg:py-3 lg:px-4 bg-[#0f2828] border border-gray-700 rounded-lg text-white outline-none focus:border-primary transition-all text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
                   placeholder="Doe"
                 />
               </div>
@@ -209,33 +209,33 @@ const Pagefive = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               <div>
-                <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-2">Email</label>
+                <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-1 md:mb-2">Email</label>
                 <input
                   type="email"
                   name="email"
                   required
-                  className="w-full py-1.5 px-3 lg:py-3 lg:px-4 bg-[#0f2828] border border-gray-700 rounded-lg text-white outline-none focus:border-primary transition-all text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
+                  className="w-full py-2 px-3 lg:py-3 lg:px-4 bg-[#0f2828] border border-gray-700 rounded-lg text-white outline-none focus:border-primary transition-all text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
                   placeholder="john@example.com"
                 />
               </div>
               <div>
-                <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-2">Phone Number</label>
+                <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-1 md:mb-2">Phone Number</label>
                 <input
                   type="tel"
                   name="Phone Number"
-                  className="w-full py-1.5 px-3 lg:py-3 lg:px-4 bg-[#0f2828] border border-gray-700 rounded-lg text-white outline-none focus:border-primary transition-all text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
+                  className="w-full py-2 px-3 lg:py-3 lg:px-4 bg-[#0f2828] border border-gray-700 rounded-lg text-white outline-none focus:border-primary transition-all text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
                   placeholder="+880 1852 705 818"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-2">Message</label>
+              <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-1 md:mb-2">Message</label>
               <textarea
                 rows="5"
                 name="message"
                 required
-                className="w-full py-1.5 px-3 lg:py-3 lg:px-4 bg-[#0f2828] border border-gray-700 rounded-lg text-white outline-none focus:border-primary resize-none transition-all text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
+                className="w-full py-2 px-3 lg:py-3 lg:px-4 bg-[#0f2828] border border-gray-700 rounded-lg text-white outline-none focus:border-primary resize-none transition-all text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
                 placeholder="Your message here..."
               ></textarea>
             </div>
@@ -277,7 +277,7 @@ const Pagefive = () => {
           <FaGithub className="text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px]" />
         </motion.a>
         <motion.a
-          href="https://www.linkedin.com/in/shukurmahmud/"
+          href="https://www.linkedin.com/in/nayeem-11bd/"
           target="_blank"
           rel="noopener noreferrer"
           className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg"
@@ -287,7 +287,17 @@ const Pagefive = () => {
           <FaLinkedin className="text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px]" />
         </motion.a>
         <motion.a
-          href="https://x.com/MdShukurMahmud3"
+          href="https://www.instagram.com/sknayeem6906/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg"
+          whileHover={{ scale: 1.2, backgroundColor: "#AEFF72", color: "#0D2426" }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <FaInstagram className="text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px]" />
+        </motion.a>
+        <motion.a
+          href="https://x.com/SknayeemIslam3"
           target="_blank"
           rel="noopener noreferrer"
           className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg"
