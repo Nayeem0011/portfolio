@@ -8,8 +8,21 @@ import { useRef } from "react"
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
+import Image from 'next/image';
+import project1 from './image/project_image_01.png';
+import project2 from './image/project_image_02.png';
+import project3 from './image/project_image_03.png';
+import project4 from './image/project_image_04.png';
+import project5 from './image/project_image_05.png';
+import project6 from './image/project_image_06.png';
+import project7 from './image/project_image_07.png';
+import project8 from './image/project_image_08.png';
+import project9 from './image/project_image_09.png';
+import project10 from './image/project_image_10.png';
+import project11 from './image/project_image_11.png';
 
 const Pageone = () => {
+  const MotionImage = motion(Image);
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const projects = [
@@ -17,81 +30,89 @@ const Pageone = () => {
       title: "Portfolio Website",
       description: "Personal portfolio built with React and Tailwind CSS. Features smooth animations and responsive design.",
       tech: ["React", "Tailwind", "Framer Motion"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-      github: "https://github.com/mahmud014/Portfolio",
-      live: "https://shukur-portfolio.vercel.app"
+      image: project1,
+      github: "https://github.com/Nayeem0011/ANIMATION_PORTFOLIO",
+      live: "https://nayeem-portfolio-website-01.netlify.app/"
     },
     {
-      title: "Todo App",
-      description: "Simple task management app with CRUD operations. Learning project to practice React hooks and state management.",
-      tech: ["React", "JavaScript", "CSS"],
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
-      github: "https://github.com/mahmud014/app-aplication",
-      live: "https://quantumcode-aplication.vercel.app"
+      title: "Genesis Landing Page",
+      description: "A modern landing page converted from a design into a live website. Focused on clean layout, smooth sections, and visual consistency.",
+      tech: ["React", "CSS", "Tailwind"],
+      image: project2,
+      github: "https://github.com/Nayeem0011/web3_landing",
+      live: "https://web3-landing-page-zeta.vercel.app/"
     },
     {
-      title: "Book App",
-      description: "Discover, read, and organize your favorite books with categories, ratings, and personalized reading lists.",
-      tech: ["React", "API", "Tailwind"],
-      image: "https://i.ibb.co.com/dwYMP3NZ/istockphoto-1313532517-612x612.jpg",
-      github: "https://github.com/mahmud014/book-vibe",
-      live: "https://book-vibe-chi.vercel.app/"
+      title: "Business Landing Page",
+      description: "A professional landing page built from Figma design using React and Tailwind CSS, focused on responsiveness and modern layout.",
+      tech: ["React", "CSS", "Tailwind"],
+      image: project3,
+      github: "https://github.com/Nayeem0011/business-landing-page-react-tailwindcss",
+      live: "https://business-landing-page-react-tailwin-gamma.vercel.app/"
     },
     {
-      title: "E-commerce Store",
-      description: "Full-stack e-commerce platform with shopping cart, payment integration, and admin dashboard.",
-      tech: ["React", "Node.js", "MongoDB"],
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
-      github: "https://github.com/mahmud014/Shoporo-next-app",
-      live: "https://shoporo-next-app.vercel.app/"
+      title: "E-commerce Shop",
+      description: "A fully functional online store built with React and Tailwind CSS, featuring user authentication, cart management, address handling, and API integration.",
+      tech: ["React", "API", "Router", "State management"],
+      image: project4,
+      github: "https://github.com/Nayeem0011/SPRWFORGE_ONLINE_SHOPPING_PROJECT",
+      live: "https://sprwforge-online-shopping-project.vercel.app/"
     },
     {
-      title: "News Portal App",
-      description: "A modern news portal providing real-time headlines, category-based news, detailed articles, and a clean reading experience.",
-      tech: ["React", "Firebase", "Tailwind"],
-      image: "https://i.ibb.co.com/xSgL5DWL/istockphoto-182779981-612x612.jpg",
-      github: "https://github.com/mahmud014/The-Dragon-News",
-      live: "https://dragon-news-37713.web.app/"
+      title: "Trading Landing Page",
+      description: "A fully responsive landing page coded from Figma using Next.js and Tailwind CSS, designed for trading businesses.",
+      tech: ["Next.js", "Typescript", "CSS", "Tailwind"],
+      image: project10,
+      github: "https://github.com/Nayeem0011/trading_landing_page",
+      live: "https://trading-landing-page-one.vercel.app/"
     },
     {
-      title: "Skills Course App",
-      description: "A learning platform offering skill-based courses with video lessons, quizzes, progress tracking, and certificate generation for students..",
-      tech: ["React", "Firebase", "Tailwind"],
-      image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=600&fit=crop",
-      github: "https://github.com/mahmud014/Skill-Hive",
-      live: "https://skill-hive-gold.vercel.app/"
+      title: "Evogym Application",
+      description: "A gym application website built with React and Tailwind CSS, allowing users to apply and register seamlessly.",
+      tech: ["React", "CSS", "Tailwind"],
+      image: project5,
+      github: "https://github.com/Nayeem0011/EVOGYM_APPLICATION_WEBSITE",
+      live: "https://evogym-application-website.vercel.app/"
     },
     {
-      title: "Restaurant App",
-      description: "A modern restaurant app with online menu browsing, food ordering, table reservations, and real-time order tracking.",
-      tech: ["React", "API", "CSS"],
-      image: "https://i.ibb.co.com/8VmT9wK/istockphoto-172446562-612x612.jpg",
-      github: "https://github.com/mahmud014/DishDive-restaurant-App",
-      live: "https://dishdive-e699b.web.app/"
+      title: "Flavor Finder Website",
+      description: "A recipe website built with React and Tailwind CSS, featuring category filters and video tutorials for creating a variety of dishes.",
+      tech: ["React", "Router", "API", "Tailwind"],
+      image: project6,
+      github: "https://github.com/Nayeem0011/FLAVORFINDER_UI_WEBSITE",
+      live: "https://flavorfinder-ui-website-crf1.vercel.app/"
     },
     {
-      title: "Emergency Hotline",
-      description: "A quick-access emergency support app with one-tap calling, location sharing, and essential hotline numbers for police, fire service, and medical services.",
-      tech: ["React", "Chart.js", "LocalStorage"],
-      image: "https://i.ibb.co.com/VcD3VCF0/istockphoto-1363270862-612x612.jpg",
-      github: "https://github.com/mahmud014/Emergency-Hotline-Assignment-5",
-      live: "https://emergency-hotline-two.vercel.app/"
+      title: "Movies Website",
+      description: "A dynamic entertainment platform built with React and Tailwind CSS, displaying API-driven data for movies and TV shows, including Now Playing, and Popular sections.",
+      tech: ["React", "API", "Typescript", "Tailwind"],
+      image: project7,
+      github: "https://github.com/Nayeem0011/MOVIES_WEBSITE_PROJECT",
+      live: "https://movies-website-project-seven.vercel.app/"
     },
     {
-      title: "Mobile Pay App",
-      description: "A secure and user-friendly mobile payment system for sending money, mobile recharge, bill payments, and transaction tracking.",
-      tech: ["React", "Firebase", "Tailwind"],
-      image: "https://i.ibb.co.com/rRPp0qfy/photo-1651055705032-d4187855b004.jpg",
-      github: "https://github.com/mahmud014/mobile-payoo",
-      live: "https://mobile-payoo.vercel.app/"
+      title: "Smartphone Shop",
+      description: "An online store built with React, Tailwind CSS, and Firebase, featuring user authentication, add-to-cart functionality, and order submission.",
+      tech: ["React", "Firebase", "API", "Tailwind"],
+      image: project8,
+      github: "https://github.com/Nayeem0011/SIMPLE_SMART_PHONE_WEBSITE",
+      live: "https://simple-smart-phone-website.vercel.app/"
     },
     {
-      title: "Learning App",
-      description: "Learn English easily with vocabulary practice, daily lessons, quizzes, and real-life examples — designed for Bangla speakers.",
-      tech: ["React", "TMDB API", "Tailwind"],
-      image: "https://i.ibb.co.com/sdNLPPyH/istockphoto-2208643645-612x612.webp",
-      github: "https://github.com/mahmud014/English-janala-app",
-      live: "https://english-janala-app.vercel.app/"
+      title: "Foods Website",
+      description: "A full-featured food ordering platform, including search, cart, user authentication, order confirmation, and detailed order management.",
+      tech: ["React", "Firebase", "API", "Tailwind"],
+      image: project9,
+      github: "https://github.com/Nayeem0011/FOOD_DELIVERY_WEBSITE_PROJECT",
+      live: "https://food-delivery-website-07.netlify.app/"
+    },
+    {
+      title: "FoxAI Landing Page",
+      description: "A fully responsive landing page coded from Figma using Next.js and Tailwind CSS, designed with modern layouts and smooth user experience.",
+      tech: ["Next.js", "Typescript", "CSS", "Tailwind"],
+      image: project11,
+      github: "https://github.com/Nayeem0011/foxai",
+      live: "https://foxai-six.vercel.app/"
     }
   ]
 
@@ -173,13 +194,15 @@ const Pageone = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="relative overflow-hidden h-56">
-                <motion.img
+                <MotionImage
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.5 }}
                 />
+
                 <div className="absolute inset-0 bg-linear-to-t from-primary via-primary/50 to-transparent opacity-60"></div>
                 <motion.div
                   className="absolute bottom-4 left-4 right-4"
