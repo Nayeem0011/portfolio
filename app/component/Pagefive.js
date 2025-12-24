@@ -189,6 +189,7 @@ const Pagefive = () => {
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+            <input type="hidden" name="_next" value="https://portfolio-eight-brown-1oc6wa2xk9.vercel.app/?success=true" />
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               <div>
                 <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-1 md:mb-2">First Name</label>
