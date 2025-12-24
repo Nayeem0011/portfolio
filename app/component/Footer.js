@@ -27,14 +27,14 @@ const Footer = () => {
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 cursor-pointer mb-4">
               <FaCode className="text-secondary text-xl" />
-              <span className="text-2xl font-bold text-white tracking-wide">
+              <span className="text-xl md:text-2xl font-bold text-white tracking-wide">
                 Nayeem<span className="text-secondary">.dev</span>
               </span>
             </div>
-            <p className="text-gray-300 mb-4 max-w-md">
+            <p className="text-gray-300 mb-4 max-w-md text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]">
               Fresh graduate passionate about creating beautiful web experiences. Let&apos;s build something amazing together!
             </p>
-            <div className="flex gap-4">
+            <div className="flex gap-2 sm:gap-3 md:gap-4">
               {socialLinks.map((social, index) => (
                 <motion.div
                   key={index}
@@ -46,9 +46,9 @@ const Footer = () => {
                     href={social.href}
                     target={social.href.startsWith('mailto:') ? '_self' : '_blank'}
                     rel="noopener noreferrer"
-                    className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all"
+                    className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 bg-white/10 rounded-full flex items-center justify-center hover:bg-secondary hover:text-primary transition-all"
                   >
-                    <social.icon className="text-xl" />
+                    <social.icon className="text-[15px] sm:text-[16px] md:text-[17px] lg:text-[18px] xl:text-[19px] 2xl:text-[20px]" />
                   </a>
                   {/* Tooltip */}
                   <div className="absolute -top-10 left-1/2 -translate-x-1/2 bg-secondary text-primary px-3 py-1 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap pointer-events-none">
@@ -62,8 +62,8 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] font-bold mb-2 sm:mb-3 md:mb-4">Quick Links</h3>
+            <ul className="text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] space-y-2">
               <li>
                 <button onClick={() => scrollToSection('home')} className="text-gray-300 hover:text-secondary transition-colors">
                   Home
@@ -89,8 +89,8 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-bold mb-4">Contact</h3>
-            <ul className="space-y-2 text-gray-300">
+            <h3 className="text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] font-bold mb-2 sm:mb-3 md:mb-4">Contact</h3>
+            <ul className="space-y-2 text-gray-300 text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]">
               <li>Kaliganj, Satkhira, Khlna</li>
               <li>sknayeemislam384@gmail.com</li>
               <li>+880 1852 705 818</li>
@@ -99,11 +99,11 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-300 text-sm">
+        <div className="border-t border-white/10 pt-5 sm:pt-6 md:pt-7 lg:pt-8 flex flex-col md:flex-row justify-between items-center gap-3 md:gap-4">
+          <p className="text-gray-300 text-[12px] md:text-[13px] lg:text-[14px]">
             Copyright © {new Date().getFullYear()} Nayeem. All rights reserved.
           </p>
-          <p className="text-gray-300 text-sm flex items-center gap-2">
+          <p className="text-gray-300 text-[12px] md:text-[13px] lg:text-[14px] flex items-center gap-2">
             Made with <motion.span
               animate={{ scale: [1, 1.2, 1] }}
               transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
