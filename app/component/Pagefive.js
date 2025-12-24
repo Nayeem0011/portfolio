@@ -10,33 +10,33 @@ const Pagefive = () => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   setIsSubmitting(true)
 
-    const form = e.target
-    const formData = new FormData(form)
+  //   const form = e.target
+  //   const formData = new FormData(form)
 
-    try {
-      const response = await fetch('https://formsubmit.co/sknayeemislam384@gmail.com', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
+  //   try {
+  //     const response = await fetch('https://formsubmit.co/sknayeemislam384@gmail.com', {
+  //       method: 'POST',
+  //       body: formData,
+  //       headers: {
+  //         'Accept': 'application/json'
+  //       }
+  //     })
 
-      if (response.ok) {
-        setShowSuccess(true)
-        form.reset()
-        setTimeout(() => setShowSuccess(false), 5000)
-      }
-    } catch (error) {
-      console.error('Form submission error:', error)
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
+  //     if (response.ok) {
+  //       setShowSuccess(true)
+  //       form.reset()
+  //       setTimeout(() => setShowSuccess(false), 5000)
+  //     }
+  //   } catch (error) {
+  //     console.error('Form submission error:', error)
+  //   } finally {
+  //     setIsSubmitting(false)
+  //   }
+  // }
   return (
     <section ref={ref} className="w-full max-w-7xl mx-auto py-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -180,9 +180,16 @@ const Pagefive = () => {
             Fill out the form below to connect with me. I&apos;ll get back to you soon to discuss your project or answer any questions.
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
+          <form
+            action="https://formsubmit.co/sknayeemislam384@gmail.com"
+            method="POST"
+            className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6"
+          >
+
             <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio" />
             <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               <div>
@@ -241,9 +248,7 @@ const Pagefive = () => {
             </div>
 
             {showSuccess && (
-              <div className="bg-secondary/20 border md:border-2 border-secondary text-secondary py-2 px-4 md:py-3 md:px-5 lg:py-4 lg:px-6 rounded-lg text-center font-semibold text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]">
-                ✓ Message sent successfully! I&apos;ll get back to you soon.
-              </div>
+              <input type="hidden" name="_next" value="https://portfolio-eight-brown-1oc6wa2xk9.vercel.app/?success=true" />
             )}
 
             <motion.button
