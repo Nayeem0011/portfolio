@@ -1,5 +1,8 @@
 'use client';
 
+import Image from 'next/image';
+import profile_image from './image/profile_image.jpg';
+
 import { motion } from 'framer-motion'
 
 const HeroPage = () => {
@@ -150,11 +153,7 @@ const HeroPage = () => {
                 transition: { duration: 0.5 },
               }}
             >
-              {/* <img
-                alt="Shukur - Aspiring Full-Stack Developer"
-                className="w-full h-full object-cover"
-                src="https://i.postimg.cc/L4gsjZTL/photo.png"
-              /> */}
+              <Image className="w-full h-full object-cover" src={profile_image} alt="loading ..." />
             </motion.div>
             <motion.div
               className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-4 cursor-pointer"

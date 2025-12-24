@@ -100,7 +100,7 @@ function NavBar() {
             <div className="flex items-center space-x-4">
               <a
                 className="hidden lg:block bg-secondary text-primary font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-all"
-                href="https://drive.google.com/file/d/14caD1rlRM_QEF0NfG7xy_kat3-C9Eczm/view?usp=sharing"
+                href="https://www.canva.com/design/DAG1mUITthw/OYnJoAQ2xSc1m-G_7qjj7g/edit?utm_content=DAG1mUITthw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -172,7 +172,7 @@ function NavBar() {
                     >
                       <a
                         className="block text-center bg-secondary text-primary font-semibold px-4 py-2 rounded-lg cursor-pointer"
-                        href="https://drive.google.com/file/d/14caD1rlRM_QEF0NfG7xy_kat3-C9Eczm/view?usp=sharing"
+                        href="https://www.canva.com/design/DAG1mUITthw/OYnJoAQ2xSc1m-G_7qjj7g/edit?utm_content=DAG1mUITthw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setIsMobileMenuOpen(false)}

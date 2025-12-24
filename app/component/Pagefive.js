@@ -135,7 +135,7 @@ const Pagefive = () => {
 
           {/* Resume Badge */}
           <motion.a
-            href="https://drive.google.com/file/d/14caD1rlRM_QEF0NfG7xy_kat3-C9Eczm/view?usp=sharing"
+            href="https://www.canva.com/design/DAG1mUITthw/OYnJoAQ2xSc1m-G_7qjj7g/edit?utm_content=DAG1mUITthw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
             target="_blank"
             rel="noopener noreferrer"
             className="relative w-22 h-22 sm:w-24 sm:h-24 md:w-26 md:h-26 lg:w-28 lg:h-28 xl:w-30 xl:h-30 2xl:w-32 2xl:h-32 mt-8 block cursor-pointer group"

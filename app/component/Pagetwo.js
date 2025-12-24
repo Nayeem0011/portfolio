@@ -4,6 +4,8 @@ import { FaEnvelope, FaPhone, FaArrowRight } from "react-icons/fa"
 import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
+import Image from 'next/image';
+import profile_image from './image/profile_image.jpg';
 
 const Pagetwo = () => {
   const ref = useRef(null)
@@ -73,11 +75,7 @@ const Pagetwo = () => {
                 ease: "easeInOut",
               }}
             >
-              {/* <img 
-                src="https://i.postimg.cc/L4gsjZTL/photo.png" 
-                alt="Shukur" 
-                className="w-full h-full object-cover"
-              /> */}
+              <Image className="w-full h-full object-cover" src={profile_image} alt="loading ..." />
             </motion.div>
           </motion.div>
         </motion.div>
@@ -205,7 +203,7 @@ const Pagetwo = () => {
 
             <motion.a
               className="text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] flex cursor-pointer items-center gap-1 md:gap-2 bg-secondary text-primary font-semibold sm:py-2.5 py-2 px-4 sm:px-5 md:py-3 md:px-6 rounded-full shadow-lg"
-              href="https://drive.google.com/file/d/14caD1rlRM_QEF0NfG7xy_kat3-C9Eczm/view?usp=sharing"
+              href="https://www.canva.com/design/DAG1mUITthw/OYnJoAQ2xSc1m-G_7qjj7g/edit?utm_content=DAG1mUITthw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
               target="_blank"
               rel="noopener noreferrer"
               whileHover={{

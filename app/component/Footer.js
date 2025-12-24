@@ -13,10 +13,10 @@ const Footer = () => {
   }
 
   const socialLinks = [
-    { icon: FaGithub, href: "https://github.com/mahmud014", label: "GitHub" },
-    { icon: FaLinkedin, href: "https://www.linkedin.com/in/shukurmahmud/", label: "LinkedIn" },
-    { icon: FaTwitter, href: "https://x.com/MdShukurMahmud3", label: "Twitter" },
-    { icon: FaEnvelope, href: "mailto:anik955720@gmail.com", label: "Email" }
+    { icon: FaGithub, href: "https://github.com/Nayeem0011", label: "GitHub" },
+    { icon: FaLinkedin, href: "https://www.linkedin.com/in/nayeem-11bd/", label: "LinkedIn" },
+    { icon: FaTwitter, href: "https://x.com/SknayeemIslam3", label: "Twitter" },
+    { icon: FaEnvelope, href: "mailto:sknayeemislam384@gmail.com", label: "Email" }
   ]
 
   return (
