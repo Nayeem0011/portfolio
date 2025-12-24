@@ -18,13 +18,13 @@ const Pagefive = () => {
     const formData = new FormData(form)
 
     try {
-      const response = await fetch('https://formsubmit.co/ajax/sknayeemislam384@gmail.com', {
-        method: 'POST',
+      const response = await fetch("https://formsubmit.co/ajax/sknayeemislam384@gmail.com", {
+        method: "POST",
         body: formData,
         headers: {
-          'Accept': 'application/json'
-        }
-      })
+          Accept: "application/json",
+        },
+      });
 
       if (response.ok) {
         setShowSuccess(true)
@@ -181,7 +181,7 @@ const Pagefive = () => {
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-            <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio" />
+            <input type="hidden" name="_subject" value="New Contact Message from Portfolio" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
 
