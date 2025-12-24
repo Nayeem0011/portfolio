@@ -11,32 +11,40 @@ const Pagefive = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    const form = e.target
-    const formData = new FormData(form)
+    const formData = new FormData(e.target);
+
+    const payload = {
+      firstName: formData.get("First Name"),
+      lastName: formData.get("Last Name"),
+      email: formData.get("email"),
+      phone: formData.get("Phone Number"),
+      message: formData.get("message"),
+    };
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/sknayeemislam384@gmail.com", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
         headers: {
-          Accept: "application/json",
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify(payload),
       });
 
-      if (response.ok) {
-        setShowSuccess(true)
-        form.reset()
-        setTimeout(() => setShowSuccess(false), 5000)
+      if (res.ok) {
+        setShowSuccess(true);
+        e.target.reset();
+        setTimeout(() => setShowSuccess(false), 5000);
       }
-    } catch (error) {
-      console.error('Form submission error:', error)
+    } catch (err) {
+      console.error(err);
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
+
   return (
     <section ref={ref} className="w-full max-w-7xl mx-auto py-20">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -181,10 +189,6 @@ const Pagefive = () => {
           </p>
 
           <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6">
-            <input type="hidden" name="_subject" value="New Contact Message from Portfolio" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               <div>
                 <label className="block text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] text-gray-400 mb-1 md:mb-2">First Name</label>
