@@ -184,7 +184,6 @@ const Pagefive = () => {
             <input type="hidden" name="_subject" value="New Contact Form Submission from Portfolio" />
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://portfolio-eight-brown-1oc6wa2xk9.vercel.app/?success=true" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               <div>
