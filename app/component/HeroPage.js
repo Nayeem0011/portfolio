@@ -73,7 +73,7 @@ const HeroPage = () => {
             }}
             className="text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] xl:text-[16px] 2xl:text-[18px] text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0"
           >
-            Fresh graduate passionate about creating beautiful web experiences. Skilled in React, Node.js, and modern web technologies.
+            Fresh graduate passionate about creating beautiful web experiences. Skilled in React, Next.js, and modern web technologies.
           </motion.p>
 
           {/* Buttons */}

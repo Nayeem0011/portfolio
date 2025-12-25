@@ -255,7 +255,7 @@ const Pagefive = () => {
             <motion.button
               type="submit"
               disabled={isSubmitting}
-              className="bg-secondary text-primary font-medium md:font-bold py-2.5 px-5 sm:py-2.5 sm:px-6 md:py-3 md:px-7 lg:py-4 lg:px-8 rounded-full disabled:opacity-50 disabled:cursor-not-allowed text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px]"
+              className="bg-secondary text-primary font-medium md:font-bold py-2.5 px-5 sm:py-2.5 sm:px-6 md:py-3 md:px-7 lg:py-4 lg:px-8 rounded-full disabled:opacity-50 disabled:cursor-not-allowed text-[12px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] 2xl:text-[16px] cursor-pointer"
               whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(174, 255, 114, 0.3)" }}
               whileTap={{ scale: 0.95 }}
             >
